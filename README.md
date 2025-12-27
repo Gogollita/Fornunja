@@ -1,1 +1,1 @@
-[Нажми на меня, Анастасия Афродитовна](https://github.com/Gogollita/Fornunja) 
+[Нажми на меня, Анастасия Афродитовна](https://github.com/Gogollita/Fornunja/) 
