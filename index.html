@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С Днём Рождения!</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body class="bg-dark m-0 d-flex ai-center jc-center ov-hidden h-100vh">
+
+    <audio id="bdayAudio" loop>
+        <source src="https://www.myinstants.com/media/sounds/irina-allegrova-s-dnem-rozhdeniia.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="overlay" class="pos-abs w-100 h-100 bg-overlay d-flex ai-center jc-center zi-10">
+        <button id="startBtn" class="btn-pulse p-20 br-50 fs-20 c-white cursor-pointer border-none">
+            🎁 Открыть поздравление
+        </button>
+    </div>
+
+    <div id="content" class="ta-center d-none zi-5">
+        <h1 class="c-gold fs-50 shadow-text anim-float m-0">С ДНЁМ РОЖДЕНИЯ!</h1>
+        
+        <div class="slider-container mt-20 mb-20">
+            <button class="slider-btn prev" id="prevBtn">&#10094;</button>
+            <div class="slider-wrapper">
+                <div id="photoSlider" class="slider d-flex">
+                    <div class="slide">
+                        <div class="polaroid">
+                            <img src="https://via.placeholder.com/250x250?text=Фото+1" alt="Фото 1">
+                            <div class="polaroid-caption">Самый лучший день!</div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="polaroid">
+                            <img src="https://via.placeholder.com/250x250?text=Фото+2" alt="Фото 2">
+                            <div class="polaroid-caption">Улыбайся чаще!</div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="polaroid">
+                            <img src="https://via.placeholder.com/250x250?text=Фото+3" alt="Фото 3">
+                            <div class="polaroid-caption">Будь счастлив(а)!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="slider-btn next" id="nextBtn">&#10095;</button>
+        </div>
+
+        <div class="card bg-white p-20 br-20 shadow-lg d-inline-block">
+            <p id="typedText" class="fs-20 c-dark fw-bold m-0"></p>
+        </div>
+    </div>
+
+    <div id="balloon-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
