@@ -3,59 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>С Днём Рождения!</title>
-    <link rel="stylesheet" href="style.css">
+    <title>С Днём Рождения! (Black & Orange)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
-<body class="bg-dark m-0 d-flex ai-center jc-center ov-hidden h-100vh">
+<body class="bg-dark m-0 ov-hidden h-100vh body-locked">
 
     <audio id="bdayAudio" loop>
         <source src="https://www.myinstants.com/media/sounds/irina-allegrova-s-dnem-rozhdeniia.mp3" type="audio/mpeg">
     </audio>
 
     <div id="overlay" class="pos-abs w-100 h-100 bg-overlay d-flex ai-center jc-center zi-10">
-        <button id="startBtn" class="btn-pulse p-20 br-50 fs-20 c-white cursor-pointer border-none">
-            🎁 Открыть поздравление
+        <button id="startBtn" class="btn-pulse p-20 br-50 fs-20 c-white cursor-pointer border-none font-main">
+            🎁 Открыть сюрприз
         </button>
     </div>
 
-    <div id="content" class="ta-center d-none zi-5">
-        <h1 class="c-gold fs-50 shadow-text anim-float m-0">С ДНЁМ РОЖДЕНИЯ!</h1>
+    <main id="main-container" class="scroll-container d-none">
         
-        <div class="slider-container mt-20 mb-20">
-            <button class="slider-btn prev" id="prevBtn">&#10094;</button>
-            <div class="slider-wrapper">
-                <div id="photoSlider" class="slider d-flex">
-                    <div class="slide">
-                        <div class="polaroid">
-                            <img src="https://via.placeholder.com/250x250?text=Фото+1" alt="Фото 1">
-                            <div class="polaroid-caption">Самый лучший день!</div>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <div class="polaroid">
-                            <img src="https://via.placeholder.com/250x250?text=Фото+2" alt="Фото 2">
-                            <div class="polaroid-caption">Улыбайся чаще!</div>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <div class="polaroid">
-                            <img src="https://via.placeholder.com/250x250?text=Фото+3" alt="Фото 3">
-                            <div class="polaroid-caption">Будь счастлив(а)!</div>
-                        </div>
+        <section class="section d-flex ai-center jc-center flex-col pos-rel">
+            <div id="star-container" class="pos-abs w-100 h-100 top-0 left-0"></div>
+            <h1 class="font-title c-orange fs-60 shadow-text anim-float m-0 ta-center zi-5">С Днём Рождения!</h1>
+            
+            <div class="slider-container mt-40 zi-5">
+                <button class="slider-btn prev" id="prevBtn">&#10094;</button>
+                <div class="slider-wrapper">
+                    <div id="photoSlider" class="slider d-flex">
+                        <div class="slide"><div class="polaroid rotate-left"><img src="assets/img/IMG_20251227_201612_149.jpg" alt="Фото 1"><div class="polaroid-caption font-hand">Возможно, эти люди Вам знакомы...</div></div></div>
+                        <div class="slide"><div class="polaroid rotate-right"><img src="assets/img/IMG_20251227_201624_587.jpg" alt="Фото 2"><div class="polaroid-caption font-hand">Возможно, эти люди Вам знакомы...</div></div></div>
+                        <div class="slide"><div class="polaroid rotate-left"><img src="assets/img/IMG_20251227_201636_565.jpg" alt="Фото 3"><div class="polaroid-caption font-hand">Возможно, эти люди Вам знакомы...</div></div></div>
+                        <div class="slide"><div class="polaroid rotate-right"><img src="assets/img/IMG_20251227_201705_064.jpg" alt="Фото 4"><div class="polaroid-caption font-hand">Возможно, эти люди Вам знакомы...</div></div></div>
                     </div>
                 </div>
+                <button class="slider-btn next" id="nextBtn">&#10095;</button>
             </div>
-            <button class="slider-btn next" id="nextBtn">&#10095;</button>
-        </div>
+             <p class="c-white font-main mt-20 anim-pulse-slow zi-5">▼ Листай вниз ▼</p>
+        </section>
 
-        <div class="card bg-white p-20 br-20 shadow-lg d-inline-block">
-            <p id="typedText" class="fs-20 c-dark fw-bold m-0"></p>
-        </div>
-    </div>
+        <section class="section d-flex ai-center jc-center bg-cat-dark flex-col">
+            <h2 class="font-title c-orange fs-40 mb-20 ta-center">Мистический Аферист 🔮</h2>
+            <div class="cat-card bg-overlay-light p-40 br-20 ta-center oracle-container">
+                <div class="oracle-content">
+                    <div class="seer-frame mb-20">
+                        <img id="seerAferist" src="assets/img/IMG_20251227_201607_554.jpg" alt="Аферист">
+                    </div>
+                    <p id="catMessage" class="font-hand fs-24 c-orange mt-20 font-bold" style="min-height: 80px;">Нажми на кнопку, чтобы узнать судьбу...</p>
+                </div>
+                <button id="nextCatBtn" class="btn-pulse p-20 br-50 fs-16 c-white cursor-pointer border-none font-main mt-30">
+                    Узнать предсказание ✨
+                </button>
+            </div>
+        </section>
+
+        <section class="section d-flex ai-center jc-center bg-dark flex-col pos-rel">
+            <h2 class="font-title c-orange fs-40 mb-20 ta-center">Кликай и выращивай букет 🌸</h2>
+            <div id="bouquet-area" class="bouquet-display d-flex ai-center jc-center pos-rel">
+                <div id="flowers-container" class="pos-abs w-100 h-100"></div>
+            </div>
+            <button id="addFlowerBtn" class="btn-pulse p-20 br-50 fs-16 c-white cursor-pointer border-none font-main mt-40">
+                Добавить цветок 🌷
+            </button>
+            <p class="c-white font-main mt-20 ta-center fs-18" id="bouquetCount">Цветов в букете: 0</p>
+        </section>
+
+        <section class="section d-flex ai-center jc-center bg-gradient-orange flex-col pos-rel ov-hidden">
+            <h2 class="font-title c-white fs-40 mb-20 ta-center zi-5">Испытай свою удачу</h2>
+            <div class="slot-machine-container zi-5">
+                <div class="reels-window">
+                    <div class="reel" id="reel1"><div class="reel-strip"></div></div>
+                    <div class="reel" id="reel2"><div class="reel-strip"></div></div>
+                    <div class="reel" id="reel3"><div class="reel-strip"></div></div>
+                </div>
+            </div>
+            <p id="slotResult" class="c-white font-main fs-24 mt-30 zi-5 ta-center" style="min-height: 30px;"></p>
+            <button id="spinBtn" class="lever-button btn-pulse p-20 br-50 fs-20 c-white cursor-pointer border-none font-main mt-30 zi-5">🔥 ДЕПНУТЬ БАТЮ В КАЗИК 🔥</button>
+        </section>
+
+         <section class="section pos-rel ov-hidden d-flex ai-center jc-center">
+            <canvas id="matrixCanvas" class="pos-abs top-0 left-0"></canvas>
+            <div class="zi-5 ta-center card bg-overlay-light p-40 br-20 ">
+                 <h2 class="font-title c-dark fs-50 m-0">Кодю тебе...</h2>
+                 <p class="font-main c-dark fs-24">...бабки на карту</p>
+            </div>
+        </section>
+
+    </main>
 
     <div id="balloon-container"></div>
-
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 </html>
